@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%; /* White */
-    --foreground: 222.2 84% 4.9%; /* Blue/navy back/goreground color */
-    --card: 0 0% 100%; /* White */
-    --card-foreground: 222.2 84% 4.9%; /* Blue/navy back/goreground color */
-    --popover: 0 0% 100%; /* White */
-    --popover-foreground: 222.2 84% 4.9%; /* Blue/navy back/goreground color */
-    --primary: 37 32% 50%; /* LSGS BROWN */
-    --primary-foreground: 210 40% 98%; /* Light Foreground off-white */
-    --secondary: 210 40% 96.1%; /* Light Foreground off-white darker */
-    --secondary-foreground: 222.2 47.4% 11.2%; /* Blue/navy back/goreground color */
-    --muted: 210 40% 96.1%; /* Light back/goreground color muted */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 136 80% 29%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
     --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%; /*navy accent */
+    --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-    --radius: 0rem;
+    --radius: 0.5rem;
   }
 
   .dark {
@@ -33,8 +33,8 @@
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 37 32% 50%; /* LSGS BROWN */
-    --primary-foreground: 222.2 47.4% 11.2%; /* Dark Mode Navy Foreground */
+    --primary: 136 80% 42%;
+    --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217.2 32.6% 17.5%;
