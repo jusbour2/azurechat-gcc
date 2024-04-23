@@ -1,6 +1,7 @@
 import NextAuth, { NextAuthOptions } from "next-auth";
 import AzureADProvider from "next-auth/providers/azure-ad";
 import { Provider } from "next-auth/providers/index";
+import OktaProvider from "next-auth/providers/okta";
 
 const configureIdentityProvider = () => {
   const providers: Array<Provider> = [];
@@ -16,16 +17,27 @@ const configureIdentityProvider = () => {
           clientSecret: process.env.AZURE_AD_CLIENT_SECRET!,
           tenantId: process.env.AZURE_AD_TENANT_ID!,
           async profile(profile) {
-            // Check if the user belongs to the 'LoyalGPT_Admins' group
-            const groups = profile.groups || [];
-            const isAdmin = groups.includes("LoyalGPT_Admins");
             const newProfile = {
               ...profile,
               id: profile.sub,
-              isAdmin: isAdmin,
+              isAdmin: false, // Regular users from Azure AD
             };
             return newProfile;
           },
+        })
+    );
+  }
+
+  if (
+      process.env.OKTA_CLIENT_ID &&
+      process.env.OKTA_CLIENT_SECRET &&
+      process.env.OKTA_ISSUER
+  ) {
+    providers.push(
+        OktaProvider({
+          clientId: process.env.OKTA_CLIENT_ID!,
+          clientSecret: process.env.OKTA_CLIENT_SECRET!,
+          issuer: process.env.OKTA_ISSUER!,
         })
     );
   }
